@@ -11,6 +11,7 @@ const conn = require('./db/conn')
 // require('./models/rel')
 
 const ciclistaController = require('./controller/ciclista.controller')
+const authController = require('./controller/auth.controller')
 
 
 // ------------ Middleware ------------
@@ -20,6 +21,7 @@ app.use(cors())
 
 // Rotas Públicas
 app.post('/ciclista', ciclistaController.cadastrar)
+app.post('/login', authController.login)
 
 
 
