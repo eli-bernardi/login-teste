@@ -1,0 +1,52 @@
+### 1. Testar cadastro de cpf errado
+POST http://localhost:3000/ciclista
+Content-Type: application/json
+
+{
+    "nome": "João Silva",
+    "email": "joao@gmail.com",
+    "senha": "abc123",
+    "cpf": "123456789",
+    "endereco": "Rua A, 123",
+    "celular": "48123456789",
+}
+
+### 2. Testar cadastro do ciclista
+POST http://localhost:3000/ciclista
+Content-Type: application/json
+
+{
+    "nome": "João Silva",
+    "email": "joao@gmail.com",
+    "senha": "abc123",
+    "cpf": "123456789",
+    "endereco": "Rua A, 123",
+    "celular": "48123456789",
+}
+
+
+### 3. Testar cadastro do ciclista
+POST http://localhost:3000/ciclista
+Content-Type: application/json
+
+{
+    "nome": "Marcos",
+    "email": "marcos@gmail.com",
+    "senha": "abc123",
+    "cpf": "123456789",
+    "endereco": "Rua A, 123",
+    "celular": "48123456789",
+}
+
+### 4. Testar cadastro do ciclista
+POST http://localhost:3000/ciclista
+Content-Type: application/json
+
+{
+    "nome": "Gabi",
+    "email": "gabi@gmail.com",
+    "senha": "abc123",
+    "cpf": "123456789",
+    "endereco": "Rua A, 123",
+    "celular": "48123456789",
+}
