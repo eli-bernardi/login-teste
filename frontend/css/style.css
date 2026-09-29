@@ -1,39 +1,202 @@
+
 * {
     margin: 0;
     padding: 0;
-    text-align: center;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: darkblue;
-    padding: 1rem;
-    text-decoration: none !;
-
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-hr {
-    border: 1px solid white;
-    margin: 1rem 0;
-}
-
+/* =========================
+   BODY
+========================= */
 body {
-    background-color: cornflowerblue;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0b1f3a, #1d4e89, #3b82c4);
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
 
+/* =========================
+   HEADER
+========================= */
+header {
+    background-color: rgba(5, 20, 45, 0.95);
+    padding: 1rem 2rem;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header a:hover {
+    color: #60a5fa;
+}
+
+/* =========================
+   MAIN
+========================= */
+main {
+    width: 90%;
+    max-width: 550px;
+    margin: 50px auto;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
 h1 {
-    font-size: 3rem;
-    margin-top: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
+    text-align: center;
     font-size: 2rem;
     margin-top: 1.5rem;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   LABELS
+========================= */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #111827;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Quando clicar no campo */
+input:focus,
+select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #6b7280;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover */
+
+button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Clique */
+button:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   RESPOSTAS
+========================= */
+
+.resposta,
+.resposta_nome,
+#resposta_cad_ciclista {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* =========================
+   LINHA
+========================= */
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 1.5rem 0;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+th {
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
 }
