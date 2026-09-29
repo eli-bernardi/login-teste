@@ -1,35 +1,36 @@
-let res = document.getElementById('res')
-let btn = document.getElementById('btn')
+let resposta_login = document.getElementById('resposta_login')
+let btn_login = document.getElementById('btn_login')
 
-btn.addEventListener('click', (e) => {
+btn_login.addEventListener('click', (e) => {
     e.preventDefault()
 
     let email = document.getElementById('email').value
     let senha = document.getElementById('senha').value
 
-    let valores = {
+    const valores = {
         email: email,
-        senha: senha,
+        senha: senha
     }
 
     fetch(`http://localhost:3000/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(valores)
-    }).then(res => res.json())
+    })
+        .then(res => {
+            res.json()
+        })
         .then(dados => {
-            res.innerHTML = ``
-            res.innerHTML += `<p>${dados.message}</p>`
-
+            resposta_login.innerHTML = ``
+            resposta_login.innerHTML += `${dados.message}`
             if (dados.token) {
                 localStorage.setItem('token', dados.token)
                 localStorage.setItem('nome', dados.nome)
-
                 location.href = '../index.html'
             }
         })
         .catch((err) => {
-            console.error('Erro no cadastro', err)
-            res.innerHTML += `Erro na operação`
+            console.error('Erro ao cadastrar o usuário', err)
+            resposta_login.innerHTML += `Erro ao cadastrar o usuário`
         })
 })

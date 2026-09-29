@@ -1,7 +1,7 @@
-let res = document.getElementById('res')
-let btn = document.getElementById('btn')
+let resposta_cad_ciclista = document.getElementById('resposta_cad_ciclista')
+let btn_cadastrar = document.getElementById('btn_cadastrar')
 
-btn.addEventListener('click', (e) => {
+btn_cadastrar.addEventListener('click', (e) => {
     e.preventDefault()
 
     let nome = document.getElementById('nome').value
@@ -9,30 +9,31 @@ btn.addEventListener('click', (e) => {
     let senha = document.getElementById('senha').value
     let cpf = document.getElementById('cpf').value
     let endereco = document.getElementById('endereco').value
-    let telefone = document.getElementById('telefone').value
+    let celular = document.getElementById('celular').value
 
-    let valores = {
+    const valores = {
         nome: nome,
         email: email,
         senha: senha,
         cpf: cpf,
         endereco: endereco,
-        telefone: telefone
+        celular: celular
     }
 
     fetch(`http://localhost:3000/ciclista`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(valores)
-    }).then(res => res.json())
-        .then(dados => {
-            res.innerHTML = ``
-            res.innerHTML += `<p>${dados.message}</p>`
+    })
+        .then(res => {
+            res.json()
         })
-        .catch ((err) => {
-            console.error('Erro no cadastro', err)
-            res.innerHTML += `Erro na operação`
+        .then(dados => {
+            resposta_cad_ciclista.innerHTML = ``
+            resposta_cad_ciclista.innerHTML += `${dados.message}`
+        })
+        .catch((err) => {
+            console.error('Erro ao cadastrar o usuário', err)
+            resposta_cad_ciclista.innerHTML += `Erro ao cadastrar o usuário`
         })
 })
