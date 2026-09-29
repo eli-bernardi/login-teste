@@ -12,7 +12,7 @@ const cadastrar = async (req, res) => {
         return res.status(400).json({ message: 'Todos os campos são obrigatórios!' })
     }
 
-    if (valores.cpf.length !== 11) {
+    if (valores.cpf.length !== 14) {
         return res.status(400).json({ message: 'CPF inválido!' })
     }
 

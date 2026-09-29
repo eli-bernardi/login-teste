@@ -20,7 +20,7 @@ const Ciclista = db.define('Ciclista', {
         allowNull: false,
     },
     cpf: {
-        type: DataTypes.STRING(14),
+        type: DataTypes.STRING(11),
         allowNull: false,
     },
     endereco: {
@@ -28,7 +28,7 @@ const Ciclista = db.define('Ciclista', {
         allowNull: false,
     },
     celular: {
-        type: DataTypes.STRING(14),
+        type: DataTypes.STRING(11),
         allowNull: false,
     }
 }, {
